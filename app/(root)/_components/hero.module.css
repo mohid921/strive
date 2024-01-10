@@ -1,0 +1,101 @@
+.blueBg {
+  background-color: #dff0ff;
+}
+
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+}
+
+.content {
+  text-align: center;
+}
+
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.heading {
+  color: #121212;
+  font-family: Inter;
+  font-size: 3.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.375rem;
+  text-transform: capitalize;
+}
+
+.paragraph {
+  color: #333;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem;
+  text-transform: capitalize;
+}
+
+.cover {
+  display: flex;
+  align-items: center;
+}
+
+.cover > * + * {
+  margin-left: 0.5rem;
+}
+
+.button {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.button > * + * {
+  margin-left: 0.5rem;
+}
+
+.buttonNormal {
+  border-radius: 0.5rem;
+  background: #066fcf;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-transform: capitalize;
+}
+
+.buttonOutline {
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #066fcf;
+  border: 1px solid #066fcf;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .content {
+    text-align: left;
+  }
+}
