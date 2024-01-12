@@ -5,6 +5,7 @@ import styles from "./about.module.css";
 import { useLayoutEffect } from "react";
 
 import AOS from "aos";
+import clsx from "clsx";
 
 export default function About() {
   useLayoutEffect(() => {
@@ -41,7 +42,7 @@ export default function About() {
                         />
                       </div>
                     </div>
-                    <div className={styles.imageGroup}>
+                    <div className={clsx(styles.imageGroup, styles.hidden)}>
                       <div className={styles.imageCover}>
                         <Image
                           src="/person.png"
@@ -79,28 +80,36 @@ export default function About() {
           </div>
           {/* content */}
           <div data-aos="fade-down-left" className={styles.content}>
-            <div>
+            <div className={styles.contentCover}>
               <h6 className={styles.heading}>Founders</h6>
               <p className={styles.paragraph}>
-                Sed ut perspiciatis unde omnis iste natus accusantium doloremqu
-                laudantium, totam veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo.
+                Blessed Pepple Nana Yeboah, Akoto-Bamfo & Obinna Okereke
               </p>
             </div>
-            <div>
+            <div className={styles.contentCover}>
               <h6 className={styles.heading}>Mission</h6>
               <p className={styles.paragraph}>
-                Sed ut perspiciatis unde omnis iste natus accusantium doloremqu
-                laudantium, totam veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo.
+                As a hopeful international student in the UK, our dream of
+                securing meaningful employment post-graduation were shattered,
+                and the disappointment was overwhelming. Despite possessing the
+                right skills, we faced the harsh reality of the UK job market,
+                leaving us uncertain about my future. So, we empathize deeply
+                with the struggles countless international students like me
+                endure. This shared journey fuels our passion to empower fellow
+                international students. To transform uncertainties into
+                opportunities.
               </p>
             </div>
-            <div>
+            <div className={styles.contentCover}>
               <h6 className={styles.heading}>Vision</h6>
               <p className={styles.paragraph}>
-                Sed ut perspiciatis unde omnis iste natus accusantium doloremqu
-                laudantium, totam veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo.
+                We will be assembling the best international graduates from
+                companies across the UK to provide support for current
+                international students and give them the necessary guidance
+                required to navigate the UK Job market. We believe the best
+                people to provide the key information needed to unlock their
+                career potential in the UK are people who have gone through the
+                process.
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .wrapper {
@@ -20,7 +20,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 50%;
+  padding-top: 100%;
 }
 
 .content {
@@ -35,7 +35,7 @@
 .heading {
   color: #121212;
   font-family: Inter;
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: 2.5rem;
@@ -44,7 +44,7 @@
 
 .paragraph {
   color: #333;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
@@ -53,17 +53,20 @@
 
 .cover {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .cover > * + * {
-  margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .button {
   padding: 1rem 1.25rem;
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .button > * + * {
@@ -98,5 +101,17 @@
   }
   .content {
     text-align: left;
+  }
+  .heading {
+    font-size: 2.75rem;
+  }
+  .cover {
+    flex-direction: row;
+  }
+  .cover > * + * {
+    margin-left: 0.5rem;
+  }
+  .imageContainer {
+    padding-top: 50%;
   }
 }

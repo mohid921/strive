@@ -49,28 +49,27 @@
   text-transform: capitalize;
 }
 
-.inputContainer {
-  border-radius: 0.5rem;
-  background: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+.icon {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 
-.input {
-  padding: 0.5rem 0.75rem;
-}
-
-.button {
-  border-radius: 0.5rem;
-  background: #066fcf;
-  color: #fff;
-  text-align: center;
-  font-size: 0.875rem;
+.span {
+  color: #333;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1.125rem;
-  text-transform: capitalize;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
+  line-height: 0.75;
 }
+
+.paragraph {
+  color: #333;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
 
 @media screen and (min-width: 640px) {
   .grid {

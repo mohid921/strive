@@ -34,7 +34,7 @@
 
 .imageWrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 1.5rem;
 }
 
@@ -64,6 +64,14 @@
   margin-top: 1rem;
 }
 
+.contentCover > * + * {
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
 .heading {
   color: #066fcf;
   font-family: Inter;
@@ -90,6 +98,12 @@
   .padding {
     padding-top: 6rem;
     padding-bottom: 10rem;
+  }
+  .hidden {
+    display: flex;
+  }
+  .imageWrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

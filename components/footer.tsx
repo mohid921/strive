@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "@/styles/footer.module.css";
 import Image from "next/image";
+import { Location, Mail, Phone } from "./icons";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
               alt="logo"
               width={150}
               height={40}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", transform: "translateX(-1rem)" }}
             />
             <p className={styles.paragraph}>
               Sed ut perspiciatis unde omnis natus error voluptatem accusantium
@@ -40,15 +41,27 @@ const Footer = () => {
             </ul>
           </div>
           <div className={styles.box}>
-            <h6 className={styles.heading}>Help & Support</h6>
-            <p className={styles.paragraph}>Send Your Email to join </p>
-            <div className={styles.inputContainer}>
-              <input
-                type="text"
-                placeholder="Enter Your Email"
-                className={styles.input}
-              />
-              <button className={styles.button}>Send</button>
+            <h6 className={styles.heading}>Get in Touch</h6>
+            <div className={styles.icon}>
+              <Location size={40} />
+              <div>
+                <span className={styles.span}>Location</span>
+                <p className={styles.paragraph}>123 Street, New York, USA</p>
+              </div>
+            </div>
+            <div className={styles.icon}>
+              <Mail size={40} />
+              <div>
+                <span className={styles.span}>Mail</span>
+                <p className={styles.paragraph}>abc@gmail.com</p>
+              </div>
+            </div>
+            <div className={styles.icon}>
+              <Phone size={40} />
+              <div>
+                <span className={styles.span}>Phone Number</span>
+                <p className={styles.paragraph}>+1 234 567 789</p>
+              </div>
             </div>
           </div>
         </div>

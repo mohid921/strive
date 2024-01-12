@@ -70,12 +70,6 @@ export default function Home() {
         </div>
       </div>
       <About />
-      <div className="container">
-        <div className={styles.content}>
-          <h3 className={styles.heading}>Contact Us</h3>
-        </div>
-        <Contact />
-      </div>
     </main>
   );
 }

@@ -20,7 +20,7 @@ const StoriesCard = () => {
           src="/person.png"
           alt="stories"
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: "top" }}
         />
       </div>
       <div className={styles.wrapper}>
@@ -32,11 +32,19 @@ const StoriesCard = () => {
           Sed ut perspiciatis unde omnis natus error voluptatem
           laudantium,inventore veritatis et quasi architecto beatae vita dicta
           explicabo.
-          <span className={styles.readMore}>READ STORY</span>
         </p>
         <div className={styles.cover}>
           <h6 className={styles.name}>Selena Kate</h6>
-          <span className={styles.work}>Employed at: Google</span>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <span className={styles.work}>Employed at: Google</span>
+            <span className={styles.readMore}>READ STORY</span>
+          </div>
         </div>
       </div>
     </div>

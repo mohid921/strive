@@ -11,8 +11,8 @@ const Navbar = () => {
           <Image
             src="/logo.png"
             alt="logo"
-            width={150}
-            height={40}
+            width={170}
+            height={50}
             style={{ objectFit: "contain" }}
           />
         </div>
