@@ -66,6 +66,7 @@ export default function Home() {
             <EventCard />
             <EventCard />
             <EventCard />
+            <EventCard />
           </div>
         </div>
       </div>
