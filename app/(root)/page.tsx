@@ -22,7 +22,7 @@ export default function Home() {
     "royalnavy.webp",
     "university-of-bolton.png",
   ];
-
+  
   return (
     <main>
       <Hero />

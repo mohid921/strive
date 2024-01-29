@@ -41,10 +41,11 @@ const Select: React.FC<SelectProps> = ({
           placeholder={placeholder}
           onChange={onChange as any}
           options={options}
+          menuPortalTarget={document.body}
           styles={{
             menuPortal: (base: any) => ({
               ...base,
-              zIndex: 150,
+              zIndex: 99999,
               fontSize: "0.875rem",
               lineHeight: "1.25rem",
             }),
