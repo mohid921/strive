@@ -1,7 +1,6 @@
 "use client";
 
-import ReactSelect from "react-select";
-
+import dynamic from 'next/dynamic';
 interface SelectProps {
   label: string;
   value?: Record<string, any>;
@@ -21,6 +20,8 @@ const Select: React.FC<SelectProps> = ({
   disabled,
   padding,
 }) => {
+  const ReactSelect = dynamic(() => import('react-select'), { ssr: false });
+
   return (
     <div style={{ zIndex: 100 }}>
       <label
