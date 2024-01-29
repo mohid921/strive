@@ -34,6 +34,7 @@ const ManageMentor = () => {
         <div
           style={{
             display: "flex",
+            flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
             paddingBottom: "1rem",
@@ -42,7 +43,7 @@ const ManageMentor = () => {
           <h3 style={{ color: "#121212", fontSize: "38px", fontWeight: 500 }}>
             Manage Mentors
           </h3>
-          <div style={{ display: "flex", gap: "1rem" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
             <Select
               placeholder="Area of study"
               onChange={() => {}}
@@ -68,9 +69,7 @@ const ManageMentor = () => {
               placeholder="company"
               onChange={() => {}}
               label=""
-              options={[
-                { label: "NHS", value: "e" },
-              ]}
+              options={[{ label: "NHS", value: "e" }]}
               padding={".15rem 0"}
             />
           </div>
