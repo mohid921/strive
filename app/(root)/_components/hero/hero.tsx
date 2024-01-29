@@ -10,10 +10,11 @@ import styles from "./hero.module.css";
 import AOS from "aos";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 const Hero = () => {
   useLayoutEffect(() => {
@@ -51,9 +52,11 @@ const Hero = () => {
               </div>
             </div>
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
               slidesPerView={1}
               pagination={{ clickable: true }}
+              autoplay={{ delay: 3000 }}
+              loop={true}
               style={{ width: "100%", height: "100%" }}
             >
               <SwiperSlide>

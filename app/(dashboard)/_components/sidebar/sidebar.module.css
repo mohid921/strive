@@ -68,6 +68,16 @@
   padding: 1rem 1rem;
 }
 
+.dropDownLinks > * + * {
+  margin-top: 0.5rem;
+}
+
+.dropDownLink {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .linkCover > *,
 .dropDownLink {
   color: white;

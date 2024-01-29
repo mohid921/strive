@@ -9,6 +9,7 @@ interface SelectProps {
   onChange: (value: Record<string, any>) => void;
   options: Record<string, any>[];
   disabled?: boolean;
+  padding?: string;
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -18,6 +19,7 @@ const Select: React.FC<SelectProps> = ({
   onChange,
   options,
   disabled,
+  padding,
 }) => {
   return (
     <div style={{ zIndex: 100 }}>
@@ -37,7 +39,7 @@ const Select: React.FC<SelectProps> = ({
           isDisabled={disabled}
           value={value}
           placeholder={placeholder}
-          onChange={onChange}
+          onChange={onChange as any}
           options={options}
           menuPortalTarget={document.body}
           styles={{
@@ -49,7 +51,7 @@ const Select: React.FC<SelectProps> = ({
             }),
             control: (baseStyles: any, state: any) => ({
               ...baseStyles,
-              padding: "0.25rem .25rem",
+              padding: padding || "0.25rem .25rem",
             }),
           }}
         />

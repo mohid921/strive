@@ -6,21 +6,61 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 import styles from "./sidebar.module.css";
-import { ChevronDown, Menu, X, User } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import clsx from "clsx";
-import { Links } from "../../layout";
 import Link from "next/link";
 
-interface SideBarProps {
-  Links: Links[];
-}
+import {
+  Calendar,
+  GraduationCap,
+  LayoutDashboard,
+  ScrollText,
+  UserPlus,
+  User
+} from "lucide-react";
 
-const SideBar = ({ Links }: SideBarProps) => {
+const Links = [
+  {
+    Icon: User,
+    name: "Mentors",
+    dropdown: [
+      {
+        Icon: UserPlus,
+        name: "Add Mentor",
+        path: "/dashboard/add-mentor",
+      },
+      {
+        Icon: LayoutDashboard,
+        name: "Manage Mentors",
+        path: "/dashboard/manage-mentors",
+      },
+    ],
+  },
+
+  {
+    Icon: GraduationCap,
+    name: "Manage Students",
+    path: "/dashboard/manage-students",
+  },
+  {
+    Icon: Calendar,
+    name: "Manage Events",
+    path: "/dashboard/manage-events",
+  },
+
+  {
+    Icon: ScrollText,
+    name: "Write Blog/News",
+    path: "/dashboard/write-blog",
+  },
+];
+
+const SideBar = () => {
   const screenSizeBoolean = useScreen();
 
   const [activeMenu, setActiveMenu] = useState(screenSizeBoolean);
   const [openDropDown, setOpenDropDown] = useState<number | null>(null);
-
+  const [openDropDown2, setOpenDropDown2] = useState(false);
   const router = useRouter();
 
   return (
@@ -93,7 +133,7 @@ const SideBar = ({ Links }: SideBarProps) => {
                               className={styles.dropDownLink}
                             >
                               <item.Icon size={30} />
-                              {item.name}
+                              <span>{item.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -103,15 +143,57 @@ const SideBar = ({ Links }: SideBarProps) => {
                 </div>
               ))}
             </div>
-            <div className={styles.profile}>
-              <Image
-                src="/profile.png"
-                alt="profile"
-                width={50}
-                height={50}
-                style={{ objectFit: "cover", borderRadius: "99999px" }}
-              />
-              <p className={styles.profileText}>Jane Copper</p>
+            <div style={{ position: "relative", width: "100%" }}>
+              <div
+                className={styles.profile}
+                onClick={() => setOpenDropDown2((prev) => !prev)}
+              >
+                <Image
+                  src="/profile.png"
+                  alt="profile"
+                  width={50}
+                  height={50}
+                  style={{ objectFit: "cover", borderRadius: "99999px" }}
+                />
+                <p className={styles.profileText}>Jane Copper</p>
+              </div>
+              {openDropDown2 && (
+                <div
+                  style={{
+                    zIndex: 999999,
+                    position: "absolute",
+                    top: "-2rem",
+                    right: "0",
+                    left: "0",
+                    borderRadius: "0.5rem",
+                    width: "11rem",
+                    fontWeight: 400,
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <div
+                    style={{ paddingTop: "0.25rem", paddingBottom: "0.25rem" }}
+                  >
+                    <button
+                      style={{
+                        display: "block",
+                        paddingTop: "0.5rem",
+                        paddingBottom: "0.5rem",
+                        paddingLeft: "1rem",
+                        paddingRight: "1rem",
+                        fontSize: "0.875rem",
+                        lineHeight: "1.25rem",
+                        color: "black",
+                        background: "transparent",
+                        width: "100%",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ const Company = ({ path }: { path: string }) => {
   }, []);
 
   return (
-    <div data-aos="zoom-in-down" className={styles.box}>
+    <div className={styles.box}>
       <div className={styles.cover}>
         <Image
           src={`/logos/${path}`}

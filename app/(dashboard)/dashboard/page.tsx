@@ -8,12 +8,25 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextArea from "@/components/text-area";
 import Select from "@/components/Select";
 import Image from "next/image";
-import { Plus } from "lucide-react";
+import { BookImage, ImagePlus, Plus } from "lucide-react";
 import { countriesList } from "@/constants/countries";
 import { universitiesList } from "@/constants/universities";
+import { schoolList } from "@/constants/school";
 
 export default function Dashboard() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [base64File, setBase64File] = useState<string | null>();
+
+  function getBase64(file: File) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      setBase64File(reader.result as string);
+    };
+    reader.onerror = function (error) {
+      console.log("Error: ", error);
+    };
+  }
 
   // react-hook-form
   const {
@@ -26,16 +39,17 @@ export default function Dashboard() {
     defaultValues: {
       countries: [],
       university: [],
+      school: [],
       noField: [],
     },
   });
 
   const countries = watch("countries");
   const university = watch("university");
+  const school = watch("school");
   const noField = watch("noField");
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {};
-
 
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -46,18 +60,57 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
       <h6 className={styles.info}>Personal Information: </h6>
-      <div className={styles.profile}>
+      <div
+        className={styles.profile}
+        style={{
+          position: "relative",
+          width: 160,
+          height: 160,
+          marginBottom: "1rem",
+        }}
+      >
+        <div
+          style={{
+            padding: ".3rem",
+            background: "blue",
+            border: "2px solid white",
+            borderRadius: "99999px",
+            color: "white",
+            position: "absolute",
+            bottom: 0,
+            right: 0,
+          }}
+        >
+          <ImagePlus size={24} />
+        </div>
+        <label
+          htmlFor="profilePic"
+          style={{
+            position: "absolute",
+            inset: "0",
+            zIndex: 9999,
+            cursor: "pointer",
+          }}
+        />
         <Image
-          src="/profile.png"
+          src={base64File || "/profile.png"}
           alt="profile"
           width={150}
           height={150}
           style={{ objectFit: "cover", borderRadius: "99999px" }}
         />
-        <div>
-          <p className={styles.profileText}>Jane Copper</p>
-          <p className={styles.profileEmail}>hellojane56@gmail.com</p>
-        </div>
+        <input
+          id="profilePic"
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            if (e.target.files) {
+              const file = e.target.files[0];
+              getBase64(file);
+            }
+          }}
+          style={{ visibility: "hidden" }}
+        />
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.col2}>
@@ -166,9 +219,9 @@ export default function Dashboard() {
             disabled={isLoading}
             label="Field of Study"
             placeholder="Nano-Sociology"
-            options={options}
-            onChange={(value) => setValue("noField", value)}
-            value={noField}
+            options={schoolList}
+            onChange={(value) => setValue("school", value)}
+            value={school}
           />
           <Input
             id="course-of-study"

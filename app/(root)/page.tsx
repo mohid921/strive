@@ -8,6 +8,7 @@ import MentorCard from "./_components/mentor-card/mentor-card";
 import StoriesCard from "./_components/stories-card/stories-card";
 
 import styles from "./page.module.css";
+import clsx from "clsx";
 
 export default function Home() {
   const mentor_work_at_images: string[] = [
@@ -28,7 +29,7 @@ export default function Home() {
       <div className="container">
         <div className={styles.content}>
           <h3 className={styles.heading}>Meet Our Mentors</h3>
-          <Link href="/dashboard" className={styles.button}>
+          <Link href="/register" className={styles.button}>
             View All
           </Link>
         </div>
@@ -42,7 +43,7 @@ export default function Home() {
         <div className={styles.content}>
           <h3 className={styles.heading}>Our mentors work at</h3>
         </div>
-        <div className={styles.mentorFlex}>
+        <div className={clsx(styles.mentorFlex, "no-scrollbar")}>
           {mentor_work_at_images.map((path, i) => (
             <Company key={path + i} path={path} />
           ))}
