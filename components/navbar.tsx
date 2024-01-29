@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "@/styles/navbar.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -23,9 +24,9 @@ const Navbar = () => {
           <li>About Us</li>
           <li>Career</li>
         </ul>
-        <a href="#" className={styles.link}>
+        <Link href="/register" className={styles.link}>
           Login/Signup
-        </a>
+        </Link>
       </nav>
     </div>
   );

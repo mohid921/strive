@@ -9,6 +9,12 @@ import styles from "./hero.module.css";
 
 import AOS from "aos";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 const Hero = () => {
   useLayoutEffect(() => {
     AOS.init({ once: false, offset: 0 });
@@ -44,14 +50,43 @@ const Hero = () => {
                 </button>
               </div>
             </div>
-            <div data-aos="fade-left" className={styles.imageContainer}>
-              <Image
-                src="/objects.png"
-                alt="objects"
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </div>
+            <Swiper
+              modules={[Pagination]}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <SwiperSlide>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/objects.png"
+                    alt="objects"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/objects.png"
+                    alt="objects"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/objects.png"
+                    alt="objects"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>

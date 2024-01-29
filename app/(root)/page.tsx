@@ -1,3 +1,4 @@
+import Link from "next/link";
 import About from "./_components/about/about";
 import Company from "./_components/company/company";
 import Contact from "./_components/contact/contact";
@@ -27,6 +28,9 @@ export default function Home() {
       <div className="container">
         <div className={styles.content}>
           <h3 className={styles.heading}>Meet Our Mentors</h3>
+          <Link href="/dashboard" className={styles.button}>
+            View All
+          </Link>
         </div>
         <div className={styles.mentorGrid}>
           <MentorCard />

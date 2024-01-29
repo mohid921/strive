@@ -15,6 +15,14 @@
   text-transform: capitalize;
 }
 
+.button {
+  border-radius: 0.5rem;
+  background: #066fcf;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+}
+
 .mentorGrid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));

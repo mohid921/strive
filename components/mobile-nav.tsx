@@ -6,6 +6,7 @@ import styles from "@/styles/mobile-nav.module.css";
 import Image from "next/image";
 import { Cross, Menu } from "./icons";
 import clsx from "clsx";
+import Link from "next/link";
 
 const MobileNav = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -45,9 +46,9 @@ const MobileNav = () => {
             <li>About Us</li>
             <li>Career</li>
           </ul>
-          <a href="#" className={styles.link}>
+          <Link href="/register" className={styles.link}>
             Login/Signup
-          </a>
+          </Link>
         </div>
       )}
     </>
