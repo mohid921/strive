@@ -1,6 +1,7 @@
 "use client";
 
-import dynamic from 'next/dynamic';
+import ReactSelect from "react-select";
+
 interface SelectProps {
   label: string;
   value?: Record<string, any>;
@@ -20,7 +21,8 @@ const Select: React.FC<SelectProps> = ({
   disabled,
   padding,
 }) => {
-  const ReactSelect = dynamic(() => import('react-select'), { ssr: false });
+  if (typeof window == "undefined" && typeof document == "undefined")
+    return <div></div>;
 
   return (
     <div style={{ zIndex: 100 }}>
