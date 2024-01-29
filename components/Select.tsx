@@ -39,7 +39,6 @@ const Select: React.FC<SelectProps> = ({
           placeholder={placeholder}
           onChange={onChange}
           options={options}
-          menuPortalTarget={document.body}
           styles={{
             menuPortal: (base: any) => ({
               ...base,
